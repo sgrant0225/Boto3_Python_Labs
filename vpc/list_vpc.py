@@ -13,10 +13,10 @@ def get_vpc_name(client, filters=[]):
                 if "Name" == tag['Key']:
                     print(tag["Value"])
 
-ec2 = boto3.client('ec2')
+if __name__ == '__main__':
+    ec2 = boto3.client('ec2')
 
-
-Filters=[{ 'Name': 'isDefault','Values': ['true',]},]
+    Filters=[{ 'Name': 'isDefault','Values': ['true',]},]
     
 get_vpc_info(ec2, Filters) 
 get_vpc_name(ec2)
