@@ -8,19 +8,12 @@ response = dynamodb.get_item(
         'movieid': {
             'S': '1',
         },
-        'genre': {
-            'S': 'Fantasy',
-        },
-        'title': {
-            'S': 'The Little Mermaid',
-        },
-        'rating': {
-            'S': 'G',
-        },
     },
 )
 
-print(response['Key'])
+print(response['Item'])
+
+
 
 # response = dynamodb.describe_table(
 #     TableName='mymoviereleases',
